@@ -2,11 +2,86 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="pomodoro timer online 'pomofocus' clone project">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="dist/js/bundle.js"></script>
+  <title>Pomodoro Timer Online - clone</title>
 </head>
 <body>
-  
+  <header>
+    <h1 class="title">
+      <a class="title__a" href="#"><i class="#"></i>Pomofocus</a>
+    </h1>
+  </header>
+
+  <main>
+
+    <canvas class="cont-bar"></canvas>
+
+    <section class="timer">
+      <h2 class="timer__heading a11y-hidden">Timer</h2>
+      <ul class="timer__menu">
+        <li class="timer__item"><button class="timer__btn">Pomodoro</button></li>
+        <li class="timer__item"><button class="timer__btn">Short Break</button></li>
+        <li class="timer__item"><button class="timer__btn">Long Break</button></li>
+      </ul>
+      <p class="timer__countdown">25:00</p>
+      <button class="timer__start">START</button>
+    </section>
+
+    <section class="todos">
+      <h2 class="todos__heading a11y-hidden">To do list</h2>
+      <p class="todos__brief">Time to work!<span class="todos__working-on"></span></p>
+
+      <article class="todolist">
+        <h2 class="todolist__heading">Tasks</h2>
+        <button class="todolist__setting">setting</button>
+
+        <!-- 세팅 버튼 모달 -->
+        <div class="todolist__setting-modal is-active">
+          <ul class="todolist__setting-menu">
+            <li class="todolist__setting-item">
+              <button class="todolist__setting-btn"><i class="#"></i>Clear finished</button>
+            </li>
+            <li class="todolist__setting-item">
+              <button class="todolist__setting-btn"><i class="#"></i>Save as template</button>
+            </li>
+            <li class="todolist__setting-item">
+              <button class="todolist__setting-btn"><i class="#"></i>Add from templates</button>
+            </li>
+          </ul>
+        </div>
+
+        <button class="todolist__add-btn"><i></i>Add Task</button>
+
+        <!-- 애드 테스크 모달 -->
+        <div class="todolist__add-todo is-active">
+          <label for="input-todo">What are you working on?</label>
+          <input type="text" class="todolist__input-todo" id="input-todo">
+          <label for="input-number">Est Pomodoros</label>
+          <input type="number" class="todolist__input-number" id="input-number">
+          <button class="todolist__up">up</button>
+          <button class="todolist__down">down</button>
+          <footer>
+            <button class="todolist__cancel">Cancel</button>
+            <button class="todolist__save">Save</button>
+          </footer>
+        </div>
+        
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <ul class="guide">
+      <li class="guide__item"><a href="#">HOME</a></li>
+      <li class="guide__item"><a href="#">PRIVACY</a></li>
+      <li class="guide__item"><a href="#">CONTACT</a></li>
+    </ul>
+    <small>
+      <div>Made by 병국이와 아이들</div>
+      <div>©Pomofocus 2020. All Rights Reserved.</div>
+    </small>
+  </footer>
 </body>
 </html>
