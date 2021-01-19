@@ -4,41 +4,43 @@
   }
 }
 
-.todolist__item {
+.todolist__item, .todolist__add-todo {
   display: none;
   &-container {
   padding: 10px 20px;
   }
 }
-.todolist__item.isActive {
+.todolist__item.isActive, .todolist__add-todo.is-active {
   display: block;
   background-color: white;
   margin: 12px auto 0;
   border-radius: 10px;
-  & [for="change-todo"] {
-    position: absolute;
-    color: black;
-    line-height: 45.6px;
-    align-items: center;
-    font-size: 2.2rem;
-  }
-  & .todolist__change-todo {
-    width: 100%;
-    height: 25.6px;
-    padding: 10px 0;
-    font-size: 2.2rem;
-    border: none;
-    text-indent: 1rem;
-  }
 }
-label[for="change-number"] {
+
+label[for="change-todo"], @at-root label[for="inputNumber"] {
+  position: absolute;
+  color: black;
+  line-height: 45.6px;
+  align-items: center;
+  font-size: 2.2rem;
+}
+.todolist__change-todo, @at-root .todolist__input-todo {
+  width: 100%;
+  height: 25.6px;
+  padding: 10px 0;
+  font-size: 2.2rem;
+  border: none;
+  text-indent: 1rem;
+}
+
+label[for=change-number], label[for=inputNumber] {
   color: black;
   display: block;
   margin: 20px 0 10px;
   font-size: 1.6rem;
   font-weight: 700;
 }
-.todolist__change-number {
+.todolist__change-number, .count__input-number {
   width: 55px;
   height: 18.4px;
   padding: 10px;
@@ -47,7 +49,7 @@ label[for="change-number"] {
   border: none;
   border-radius: 5px;
 }
-.todolist__change button {
+.todolist__change button, .todolist__count button {
   width: 40px;
   height: 36px;
   margin: 0 2px;
@@ -55,10 +57,10 @@ label[for="change-number"] {
   background-color: white;
   border: 1px solid rgb(239, 239, 239);
 }
-.todolist__change-note {
+.todolist__change-note, .note__note-input {
   display: none;
 }
-.todolist__change-note.isActive {
+.todolist__change-note.isActive, .note__note-input.isActive {
   display: block;
   width: 100%;
   margin: 8px 0;
@@ -68,13 +70,13 @@ label[for="change-number"] {
   padding: 10px 0;
   text-indent: 1rem;
 }
-.todolist__add-note {
+.todolist__add-note, .todolist__add-note {
   border: none;
   background-color: transparent;
   margin: 10px 0;
   color: rgba(0, 0, 0, 0.4);
 }
-.todolist__item footer {
+.todolist__item footer, .todolist__footer {
   background-color: rgb(239, 239, 239);
   width: 100%;
   height: 64px;

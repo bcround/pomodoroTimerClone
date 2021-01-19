@@ -1,29 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@babel/polyfill/lib/index.js":
-/*!***************************************************!*\
-  !*** ./node_modules/@babel/polyfill/lib/index.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-__webpack_require__(/*! ./noConflict */ "./node_modules/@babel/polyfill/lib/noConflict.js");
-
-var _global = _interopRequireDefault(__webpack_require__(/*! core-js/library/fn/global */ "./node_modules/core-js/library/fn/global.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-if (_global["default"]._babelPolyfill && typeof console !== "undefined" && console.warn) {
-  console.warn("@babel/polyfill is loaded more than once on this page. This is probably not desirable/intended " + "and may have consequences if different versions of the polyfills are applied sequentially. " + "If you do need to load the polyfill more than once, use @babel/polyfill/noConflict " + "instead to bypass the warning.");
-}
-
-_global["default"]._babelPolyfill = true;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/polyfill/lib/noConflict.js":
 /*!********************************************************!*\
   !*** ./node_modules/@babel/polyfill/lib/noConflict.js ***!
@@ -60,16 +37,6 @@ __webpack_require__(/*! core-js/fn/promise/finally */ "./node_modules/core-js/fn
 __webpack_require__(/*! core-js/web */ "./node_modules/core-js/web/index.js");
 
 __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
-
-/***/ }),
-
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
-/***/ (() => {
-
-
 
 /***/ }),
 
@@ -9129,19 +9096,6 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 
 /***/ }),
 
-/***/ "./src/sass/main.scss":
-/*!****************************!*\
-  !*** ./src/sass/main.scss ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./node_modules/regenerator-runtime/runtime.js":
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
@@ -9926,24 +9880,40 @@ try {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-/******/ 	// startup
-/******/ 	// Load entry module
-/******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
-/******/ 	__webpack_require__("./src/js/main.js");
-/******/ 	__webpack_require__("./src/sass/main.scss");
-/******/ 	// This entry module used 'exports' so it can't be inlined
+(() => {
+"use strict";
+/*!***************************************************!*\
+  !*** ./node_modules/@babel/polyfill/lib/index.js ***!
+  \***************************************************/
+
+
+__webpack_require__(/*! ./noConflict */ "./node_modules/@babel/polyfill/lib/noConflict.js");
+
+var _global = _interopRequireDefault(__webpack_require__(/*! core-js/library/fn/global */ "./node_modules/core-js/library/fn/global.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+if (_global["default"]._babelPolyfill && typeof console !== "undefined" && console.warn) {
+  console.warn("@babel/polyfill is loaded more than once on this page. This is probably not desirable/intended " + "and may have consequences if different versions of the polyfills are applied sequentially. " + "If you do need to load the polyfill more than once, use @babel/polyfill/noConflict " + "instead to bypass the warning.");
+}
+
+_global["default"]._babelPolyfill = true;
+})();
+
+(() => {
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+
+})();
+
+(() => {
+/*!****************************!*\
+  !*** ./src/sass/main.scss ***!
+  \****************************/
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Invalid CSS after \"// }\": expected 1 selector or at-rule, was \".todolist__change-t\"\n        on line 12 of src/sass/_modal.scss\n        from line 5 of src/sass/main.scss\n>> }\r\n   -^\n\n    at processResult (C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\webpack\\lib\\NormalModule.js:597:19)\n    at C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\webpack\\lib\\NormalModule.js:691:5\n    at C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.callback (C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\sass-loader\\dist\\index.js:62:7)\n    at Object.done [as callback] (C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\neo-async\\async.js:8069:18)\n    at options.error (C:\\Users\\Administrator\\Desktop\\pomodoroTimerClone\\node_modules\\node-sass\\lib\\index.js:293:32)");
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map
