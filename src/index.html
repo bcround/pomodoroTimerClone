@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Timer Online - clone</title>
   <link rel="stylesheet" href="../dist/style.css">
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 <body>
   <header>
@@ -76,21 +77,28 @@
           </li> -->
 
           <!-- 투두리스트 아이템 모달 -->
-          <!-- <li class="todolist__item isActive">
-            <label for="change-todo">이전에 설정한 타이틀 값</label>
-            <input type="text" class="todolist__change-todo" id="change-todo">
-            <label for="change-number">Est Pomodoros</label>
-            <input type="number" class="todolist__change-number" id="change-number">
-            <button class="todolist__change-up">up</button>
-            <button class="todolist__change-down">down</button>
-            <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note" cols="30" rows="2" placeholder="Some notes..."></textarea>
+          <li class="todolist__item isActive">
+            <div class="todolist__item-container">
+              <label for="change-todo a11y-hidden">이전에 설정한 타이틀 값</label>
+            <input type="text" class="todolist__change-todo" id="change-todo" placeholder="이전에 설정한 타이틀 값">
+            <div class="todolist__change">
+              <label for="change-number">Est Pomodoros</label>
+              <input type="number" class="todolist__change-number" id="change-number" value="1">
+              <button class="todolist__change-up"><i class="fas fa-caret-up"></i><span class="a11y-hidden">up</span></button>
+              <button class="todolist__change-down"><i class="fas fa-caret-down"></i><span class="a11y-hidden">down</span></button>
+            </div>
+            <button class="todolist__add-note"><i class="fas fa-plus"></i> Add Note</button>
+            <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
             <label for="todolistChangeNote" class="a11y-hidden">Explane todo</label>
+            </div>
             <footer>
               <button class="todolist__change-delete">Delete</button>
-              <button class="todolist__change-cancel">Cancel</button>
-              <button class="todolist__change-save">Save</button>
+              <div>
+                <button class="todolist__change-cancel">Cancel</button>
+                <button class="todolist__change-save">Save</button>
+              </div>
             </footer>
-          </li> -->
+          </li>
         </ul>
 
         <button class="todolist__add-btn"><i></i>Add Task</button>

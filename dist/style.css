@@ -67,6 +67,98 @@ header, main, footer {
   clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0); }
 
+@media screen and (min-width: 440px) {
+  .todolist__item.isActive {
+    width: 440px; } }
+
+.todolist__item {
+  display: none; }
+  .todolist__item-container {
+    padding: 10px 20px; }
+
+.todolist__item.isActive {
+  display: block;
+  background-color: white;
+  margin: 12px auto 0;
+  border-radius: 10px; }
+  .todolist__item.isActive [for="change-todo"] {
+    position: absolute;
+    color: black;
+    line-height: 45.6px;
+    align-items: center;
+    font-size: 2.2rem; }
+  .todolist__item.isActive .todolist__change-todo {
+    width: 100%;
+    height: 25.6px;
+    padding: 10px 0;
+    font-size: 2.2rem;
+    border: none;
+    text-indent: 1rem; }
+
+label[for="change-number"] {
+  color: black;
+  display: block;
+  margin: 20px 0 10px;
+  font-size: 1.6rem;
+  font-weight: 700; }
+
+.todolist__change-number {
+  width: 55px;
+  height: 18.4px;
+  padding: 10px;
+  font-weight: 700;
+  background-color: #efefef;
+  border: none;
+  border-radius: 5px; }
+
+.todolist__change button {
+  width: 40px;
+  height: 36px;
+  margin: 0 2px;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid #efefef; }
+
+.todolist__change-note {
+  display: none; }
+
+.todolist__change-note.isActive {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #efefef;
+  padding: 10px 0;
+  text-indent: 1rem; }
+
+.todolist__add-note {
+  border: none;
+  background-color: transparent;
+  margin: 10px 0;
+  color: rgba(0, 0, 0, 0.4); }
+
+.todolist__item footer {
+  background-color: #efefef;
+  width: 100%;
+  height: 64px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .todolist__item footer button {
+    margin: 0 20px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: none;
+    color: #888888;
+    cursor: pointer; }
+  .todolist__item footer .todolist__change-save {
+    margin-left: -10px;
+    color: white;
+    background-color: #222222; }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
