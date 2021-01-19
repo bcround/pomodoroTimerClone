@@ -15,20 +15,34 @@
       <a class="title__a" href="#"><i class="fas fa-check-circle"></i> Pomofocus</a>
     </h1>
     <button class="setting"><i class="fas fa-cog"></i> Setting</button>
-    
-    <!-- 세팅 모달 -->
-    <section class="setting-modal is-active">
-      <h1 class="setting-modal__heading">TIMER SETTING</h1>
-      <label for="pomodoro">Pomodoro</label>
-      <input class="setting-modal__pomodoro" id="pomodoro" type="number">
-      <label for="shortBreak">Short Break</label>
-      <input class="setting-modal__short-break" id="shortBreak" type="number">
-      <label for="longBreak">Long Break</label>
-      <input class="setting-modal__long-break" id="longBreak" type="number">
-      <button class="setting-modal__ok">OK</button>
-    </section>
   </header>
-
+  <!-- 세팅 모달 -->
+  <section class="setting-modal-bg">
+    <section class="setting-modal is-active">
+      <div class="setting-modal__container">
+        <h1 class="setting-modal__heading">TIMER SETTING</h1>
+        <button class="close-setting"><i class="fas fa-times"></i></button>
+        <h2 class="setting-modal__time">Time (minutes)</h2>
+        <div class="setting-modal__times">
+          <div class="setting-modal__pomodoro">
+            <label for="pomodoro">Pomodoro</label>
+            <input id="pomodoro" type="number" min="0" value="1">
+          </div>
+          <div class="setting-modal__short-break">
+            <label for="shortBreak">Short Break</label>
+            <input id="shortBreak" type="number" min="0" value="1">
+          </div>
+          <div class="setting-modal__long-break">
+            <label for="longBreak">Long Break</label>
+            <input id="longBreak" type="number" min="0" value="1">
+          </div>
+        </div>
+      </div>
+      <footer>
+        <button class="setting-modal__ok">OK</button>
+      </footer>
+    </section>
+  </section>
   <main>
 
     <label for="progressBar">progress</label>
