@@ -45,5 +45,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  background-color: #db524d; }
+
+header, main, footer {
+  margin: 0 auto; }
+
+@media (min-width: 620px) {
+  header, main, footer {
+    width: 620px; } }
+
 
 /*# sourceMappingURL=style.css.map*/

@@ -46,3 +46,32 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+// 깔
+$pomodoroBg: rgb(219, 82, 77);
+$shortbreakBg: rgb(70, 142, 145);
+$longbreakBg: rgb(67, 126, 168);
+$grayFont: rgb(187, 187, 187);
+$checkGray: rgb(223, 223, 223);
+
+// 레이아웃 베이스
+body {
+	background-color: $pomodoroBg;
+}
+header, main, footer {
+	margin: 0 auto;
+}
+@media (min-width: 620px) {
+	header, main, footer {
+		width: 620px;
+	}
+}
+.a11y-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
