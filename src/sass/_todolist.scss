@@ -1,0 +1,183 @@
+// 레이아웃
+.todos {
+  width: 480px;
+  margin: 0 auto;
+  margin-top: 15px;
+  $pb: 20px;
+  $mb: 20px;
+  font: {
+    size: 1.8rem;
+  };
+  .todos__brief {
+    text-align: center;
+    padding-bottom: $pb;
+    margin-bottom: $mb;
+  };
+
+  .todolist {
+    .todolist__header-wrap {
+      padding-bottom: $pb;
+      border-bottom: 1px solid $defaultColor;
+      overflow: hidden;
+      margin-bottom: $mb;
+
+      h2 {
+        font-weight: bold;
+        display: inline;
+      };
+      .todolist__setting {
+        width: 30px;
+        height: 30px;
+        float: right;
+        color: $defaultColor;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+      };
+    };
+  };
+
+  .todolist__setting-modal {
+    display: none;
+  };
+
+  .todolist__add-btn {
+    margin-top: 15px;
+    display: block;
+    font-size: 1.5rem;
+    width: 100%;
+    color: $defaultColor;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: $pb;
+    border-radius: 8px;
+    opacity: 0.8;
+    font-weight: bold;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .todolist__add-todo {
+    display: none;
+  }
+  // .todolist__add-todo {
+  //   display: block;
+  //   position: relative;
+  //   padding: 30px 15px;
+  //   color: $grayFont;
+  //   background: $defaultColor;
+  //   border-radius: 8px;
+
+  //   .todolist__label-todo {
+  //     position: absolute;
+  //     left: 20px;
+  //     top: 35px;
+  //     font-weight: bold;
+  //   };
+
+  //   .todolist__input-todo {
+  //     display: block;
+  //     outline: none;
+  //     width: 97%;
+  //     font-size: 1.8rem;
+  //     border: none;
+  //     padding: 5px;
+  //     margin-bottom: $mb;
+  //   };
+
+
+  //   .todolist__count {
+  //     margin-left: 5px;
+  //     margin-bottom: 15px;
+
+  //     .count__label-number {
+  //       display: block;
+  //       color: #555555;
+  //       font-size: 1.6rem;
+  //       font-weight: bold;
+  //       margin-bottom: 10px;
+  //     };
+  
+  //     .count__input-number {
+  //       background: rgb(239, 239, 239);
+  //       padding: 10px;
+  //       width: 75px;
+  //       border-radius: 4px;
+  //       font-size: 1.6rem;
+  //       color: rgb(85, 85, 85);
+  //       margin-right: 10px;
+  //       font-weight: bold;
+  //       border: none;
+  //     }
+  
+  //     .count__up, .count__down {
+  //       text-align: center;
+  //       width: 40px;
+  //       padding: 8px 12px;
+  //       border-radius: 4px;
+  //       color: rgb(85, 85, 85);
+  //       border: 1px solid rgb(223, 223, 223);
+  //       box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
+  //       margin: 0 2px;
+  //       background: none;
+  //     }
+  //   }
+
+  //   .todolist__add-note {
+  //     display: block;
+  //     text-decoration: underline;
+  //     color: rgba(0, 0, 0, 0.4);
+  //     background: none;
+  //     font-weight: bold;
+  //   }
+
+  //   .todolist__note {
+  //     margin-left: 5px;
+  //    .note__note-input {
+  //      display: none;
+  //      border-radius: 4px;
+  //      background: rgb(239, 239, 239);
+  //      border: none;
+  //      color: rgb(85, 85, 85);
+  //      font-size: 1.5rem;
+  //      width: 95%;
+  //      padding: 10px;
+  //    }
+  //   }
+  // };
+  // .todolist__footer {
+  //   background: rgb(239, 239, 239);
+  //   border-bottom-left-radius: 8px;
+  //   border-bottom-right-radius: 8px;
+  // }
+}
+
+.summary {
+  width: 480px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
+  li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.6rem;
+  }
+
+  li span:last-child {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+
+

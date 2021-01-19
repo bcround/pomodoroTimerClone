@@ -35,6 +35,7 @@ label[for="progressBar"] {
 }
 
 .progress-bar {
+  margin-top: 15px;
   width: 100%;
   &::-webkit-progress-bar {
     background-color: white;

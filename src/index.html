@@ -7,7 +7,6 @@
   <title>Pomodoro Timer Online - clone</title>
   <link rel="stylesheet" href="../dist/style.css">
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-
 </head>
 <body>
   <header>
@@ -65,8 +64,12 @@
       <p class="todos__brief">Time to work!<span class="todos__working-on"></span></p>
 
       <article class="todolist">
-        <h2 class="todolist__heading">Tasks</h2>
-        <button class="todolist__setting">setting</button>
+        <div class="todolist__header-wrap">
+          <h2 class="todolist__heading">Tasks</h2>
+          <button class="todolist__setting" aria-label="setting">
+            <span class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
 
         <!-- 세팅 버튼 모달 -->
         <div class="todolist__setting-modal is-active">
@@ -92,54 +95,80 @@
           </li> -->
 
           <!-- 투두리스트 아이템 모달 -->
-          <!-- <li class="todolist__item isActive">
-            <label for="change-todo">이전에 설정한 타이틀 값</label>
-            <input type="text" class="todolist__change-todo" id="change-todo">
-            <label for="change-number">Est Pomodoros</label>
-            <input type="number" class="todolist__change-number" id="change-number">
-            <button class="todolist__change-up">up</button>
-            <button class="todolist__change-down">down</button>
-            <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note" cols="30" rows="2" placeholder="Some notes..."></textarea>
+          <li class="todolist__item isActive">
+            <div class="todolist__item-container">
+              <label for="change-todo a11y-hidden">이전에 설정한 타이틀 값</label>
+            <input type="text" class="todolist__change-todo" id="change-todo" placeholder="이전에 설정한 타이틀 값">
+            <div class="todolist__change">
+              <label for="change-number">Est Pomodoros</label>
+              <input type="number" class="todolist__change-number" id="change-number" value="1">
+              <button class="todolist__change-up"><i class="fas fa-caret-up"></i><span class="a11y-hidden">up</span></button>
+              <button class="todolist__change-down"><i class="fas fa-caret-down"></i><span class="a11y-hidden">down</span></button>
+            </div>
+            <button class="todolist__add-note"><i class="fas fa-plus"></i> Add Note</button>
+            <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
             <label for="todolistChangeNote" class="a11y-hidden">Explane todo</label>
+            </div>
             <footer>
               <button class="todolist__change-delete">Delete</button>
-              <button class="todolist__change-cancel">Cancel</button>
-              <button class="todolist__change-save">Save</button>
+              <div>
+                <button class="todolist__change-cancel">Cancel</button>
+                <button class="todolist__change-save">Save</button>
+              </div>
             </footer>
-          </li> -->
+          </li>
         </ul>
 
-        <button class="todolist__add-btn"><i></i>Add Task</button>
+        <button class="todolist__add-btn">
+          <i class="fa fa-plus-circle"></i>
+          Add Task
+        </button>
 
         <!-- 애드 테스크 모달 -->
         <div class="todolist__add-todo is-active">
-          <label for="inputTodo">What are you working on?</label>
+          <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
           <input type="text" class="todolist__input-todo" id="inputTodo">
-          <label for="inputNumber">Est Pomodoros</label>
-          <input type="number" class="todolist__input-number" id="inputNumber">
-          <button class="todolist__up">up</button>
-          <button class="todolist__down">down</button>
-          <textarea name="todolist__note" id="todolistNote" class="todolist__note" cols="30" rows="2" placeholder="Some notes..."></textarea>
-          <label for="todolistNote" class="a11y-hidden">Explane todo</label>
-          <footer>
-            <button class="todolist__cancel">Cancel</button>
-            <button class="todolist__save">Save</button>
+          
+          <div class="todolist__count">
+            <label for="inputNumber" class="count__label-number">Est Pomodoros</label>
+            <input type="number" class="count__input-number" id="inputNumber">
+            <button class="count__up" aria-label="up">
+              <span class="fa fa-caret-up fa-lg" aria-hidden="true"></span>
+            </button>
+            <button class="count__down" aria-label="down">
+              <span class="fa fa-caret-down fa-lg" aria-hidden="true"></span>
+            </button>
+          </div>
+          
+          <button class="todolist__add-note">+ Add Note</button>
+          <div class="todolist__note">
+            <textarea name="note__note" id="todolistNote" class="note__note-input" cols="30" rows="2" placeholder="Some notes..."></textarea>
+            <label for="todolistNote" class="note_note-label a11y-hidden">Explane todo</label>
+          </div>
+
+          <footer class="todolist__footer">
+            <button class="footer__cancel">Cancel</button>
+            <button class="footer__save">Save</button>
           </footer>
         </div>
       </article>
     </section>
 
     <section class="summary isActive">
-      <table>
-        <tr>
-          <th>Est:</th>
-          <td>0</td>
-          <th>Act:</th>
-          <td>0</td>
-          <th>Finish at:</th>
-          <td>00:00</td>
-        </tr>
-      </table>
+      <ul>
+        <li>
+          <span>Est:</span>
+          <span>0</span>
+        </li>
+        <li>
+          <span>Act:</span>
+          <span>0</span>
+        </li>
+        <li>
+          <span>Finish at</span>
+          <span>00:00</span>
+        </li>
+      </ul>
     </section>
 
   </main>
