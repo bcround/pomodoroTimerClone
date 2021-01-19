@@ -57,11 +57,11 @@ button {
 body {
   background-color: #db524d; }
 
-header, main, footer {
+header, main {
   margin: 0 auto; }
 
 @media (min-width: 620px) {
-  header, main, footer {
+  header, main {
     width: 620px; } }
 
 .a11y-hidden {
@@ -71,6 +71,214 @@ header, main, footer {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0); }
+
+.footer {
+  background-color: white;
+  border-top: 2px solid #eee;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #785e60;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .footer .guide {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; }
+    .footer .guide .guide__item {
+      margin-right: 20px; }
+      .footer .guide .guide__item a {
+        font-weight: 700;
+        text-decoration: none;
+        color: #785e60; }
+  .footer small .copyright {
+    color: #a19192;
+    font-size: 1.2rem; }
+  .footer small div {
+    margin-top: 15px; }
+
+header {
+  height: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center; }
+  header .title {
+    font-size: 2rem; }
+    header .title .title__a {
+      text-decoration: none;
+      color: white;
+      font-weight: 700; }
+  header .setting {
+    background: none rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 1.3rem; }
+  header .setting-modal {
+    display: none; }
+
+label[for="progressBar"] {
+  display: none; }
+
+.progress-bar {
+  width: 100%; }
+  .progress-bar::-webkit-progress-bar {
+    background-color: white; }
+  .progress-bar::-webkit-progress-value {
+    background-color: white;
+    color: white; }
+
+@media screen and (min-width: 440px) {
+  .todolist__item.isActive {
+    width: 440px; } }
+
+.todolist__item {
+  display: none; }
+  .todolist__item-container {
+    padding: 10px 20px; }
+
+.todolist__item.isActive {
+  display: block;
+  background-color: white;
+  margin: 12px auto 0;
+  border-radius: 10px; }
+  .todolist__item.isActive [for="change-todo"] {
+    position: absolute;
+    color: black;
+    line-height: 45.6px;
+    align-items: center;
+    font-size: 2.2rem; }
+  .todolist__item.isActive .todolist__change-todo {
+    width: 100%;
+    height: 25.6px;
+    padding: 10px 0;
+    font-size: 2.2rem;
+    border: none;
+    text-indent: 1rem; }
+
+label[for="change-number"] {
+  color: black;
+  display: block;
+  margin: 20px 0 10px;
+  font-size: 1.6rem;
+  font-weight: 700; }
+
+.todolist__change-number {
+  width: 55px;
+  height: 18.4px;
+  padding: 10px;
+  font-weight: 700;
+  background-color: #efefef;
+  border: none;
+  border-radius: 5px; }
+
+.todolist__change button {
+  width: 40px;
+  height: 36px;
+  margin: 0 2px;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid #efefef; }
+
+.todolist__change-note {
+  display: none; }
+
+.todolist__change-note.isActive {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #efefef;
+  padding: 10px 0;
+  text-indent: 1rem; }
+
+.todolist__add-note {
+  border: none;
+  background-color: transparent;
+  margin: 10px 0;
+  color: rgba(0, 0, 0, 0.4); }
+
+.todolist__item footer {
+  background-color: #efefef;
+  width: 100%;
+  height: 64px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .todolist__item footer button {
+    margin: 0 20px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: none;
+    color: #888888;
+    cursor: pointer; }
+  .todolist__item footer .todolist__change-save {
+    margin-left: -10px;
+    color: white;
+    background-color: #222222; }
+
+@media screen and (min-width: 480px) {
+  .timer {
+    width: 480px; } }
+
+.timer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .timer__menu {
+    display: flex;
+    flex-flow: row nowrap; }
+  .timer__btn {
+    padding: 2px 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: white; }
+  .timer__btn.isActive {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15); }
+  .timer__countdown {
+    margin-top: 20px;
+    color: white;
+    font-size: 12rem;
+    font-weight: 800; }
+  .timer__start {
+    display: none; }
+  .timer__start + label {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 12px;
+    width: 176px;
+    height: 55px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 5px solid lightgray;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #db524d;
+    cursor: pointer; }
+  .timer__start:checked + label {
+    position: relative;
+    top: 5px;
+    margin-top: 25px;
+    border-bottom: none; }
 
 .todos {
   width: 480px;

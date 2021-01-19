@@ -68,11 +68,11 @@ $defaultColor: white;
 body {
 	background-color: $pomodoroBg;
 }
-header, main, footer {
+header, main {
 	margin: 0 auto;
 }
 @media (min-width: 620px) {
-	header, main, footer {
+	header, main {
 		width: 620px;
 	}
 }
