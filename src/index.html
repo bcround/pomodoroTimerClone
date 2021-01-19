@@ -15,7 +15,7 @@
 
   <main>
 
-    <canvas class="cont-bar"></canvas>
+    <canvas class="count-bar"></canvas>
 
     <section class="timer">
       <h2 class="timer__heading a11y-hidden">Timer</h2>
@@ -51,23 +51,63 @@
           </ul>
         </div>
 
+        <ul class="todolist__list">
+          <!-- <li class="todolist__item">
+            <input class="todolist__checkbox" type="checkbox">
+            <span class="todolist__title"></span>
+            <span class="todolist__repeat"></span>
+            <button class="todolist__btn"></button>
+          </li> -->
+
+          <!-- 투두리스트 아이템 모달 -->
+          <!-- <li class="todolist__item isActive">
+            <label for="change-todo">이전에 설정한 타이틀 값</label>
+            <input type="text" class="todolist__change-todo" id="change-todo">
+            <label for="change-number">Est Pomodoros</label>
+            <input type="number" class="todolist__change-number" id="change-number">
+            <button class="todolist__change-up">up</button>
+            <button class="todolist__change-down">down</button>
+            <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note" cols="30" rows="2" placeholder="Some notes..."></textarea>
+            <label for="todolistChangeNote" class="a11y-hidden">Explane todo</label>
+            <footer>
+              <button class="todolist__change-delete">Delete</button>
+              <button class="todolist__change-cancel">Cancel</button>
+              <button class="todolist__change-save">Save</button>
+            </footer>
+          </li> -->
+        </ul>
+
         <button class="todolist__add-btn"><i></i>Add Task</button>
 
         <!-- 애드 테스크 모달 -->
         <div class="todolist__add-todo is-active">
-          <label for="input-todo">What are you working on?</label>
-          <input type="text" class="todolist__input-todo" id="input-todo">
-          <label for="input-number">Est Pomodoros</label>
-          <input type="number" class="todolist__input-number" id="input-number">
+          <label for="inputTodo">What are you working on?</label>
+          <input type="text" class="todolist__input-todo" id="inputTodo">
+          <label for="inputNumber">Est Pomodoros</label>
+          <input type="number" class="todolist__input-number" id="inputNumber">
           <button class="todolist__up">up</button>
           <button class="todolist__down">down</button>
+          <textarea name="todolist__note" id="todolistNote" class="todolist__note" cols="30" rows="2" placeholder="Some notes..."></textarea>
+          <label for="todolistNote" class="a11y-hidden">Explane todo</label>
           <footer>
             <button class="todolist__cancel">Cancel</button>
             <button class="todolist__save">Save</button>
           </footer>
         </div>
-        
       </article>
+    </section>
+
+    <section class="summary isActive">
+      <table>
+        <tr>
+          <th>Est:</th>
+          <td>0</td>
+          <th>Act:</th>
+          <td>0</td>
+          <th>Finish at:</th>
+          <td>00:00</td>
+        </tr>
+      </table>
     </section>
 
   </main>
@@ -80,7 +120,7 @@
     </ul>
     <small>
       <div>Made by 병국이와 아이들</div>
-      <div>©Pomofocus 2020. All Rights Reserved.</div>
+      <div>©Pomofocus 2021. All Rights Reserved.</div>
     </small>
   </footer>
 </body>
