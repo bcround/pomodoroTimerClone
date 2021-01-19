@@ -1,0 +1,76 @@
+@import "reset";
+
+@media screen and (min-width: 480px) {
+  .timer {
+    width: 480px;
+  }
+}
+
+.timer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  &__menu {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  &__btn {
+    padding: 2px 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font: {
+      size: 1.4rem;
+      weight: 100;
+    }
+    color: white;
+  }
+  &__btn.isActive {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  &__countdown {
+    margin: {
+      top: 20px;
+    }
+    color: white;
+    font: {
+      size: 12rem;
+      weight: 800;
+    }
+  }
+  &__start {
+    display: none;
+  }
+  &__start+label {
+    margin: {
+      top: 20px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 12px;
+    width: 176px;
+    height: 55px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 5px solid lightgray;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $pomodoroBg;
+    cursor: pointer;
+  }
+  &__start:checked+label {
+    position: relative;
+    top: 5px;
+    margin-top: 25px;
+    // height: 55px - 5px;
+    border-bottom: none;
+  }
+}
