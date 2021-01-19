@@ -1,3 +1,17 @@
+/* 셀렉션 스타일 */
+::-moz-selection {
+  background: hsl(209, 91%, 68%);
+  color: #ffffff;
+}
+::selection {
+  background:hsl(209, 91%, 68%);
+  color: #ffffff;
+}
+body * {
+  -webkit-tap-highlight-color: rgba(255, 255, 200, 0.3);
+  tap-highlight-color: rgba(255, 255, 200, 0.3);
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -22,6 +36,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Varela Round', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -71,11 +86,11 @@ body {
 header, main {
 	margin: 0 auto;
 }
-@media (min-width: 620px) {
-	header, main {
-		width: 620px;
-	}
-}
+// @media (min-width: 620px) {
+// 	header, main {
+// 		width: 620px;
+// 	}
+// }
 .a11y-hidden {
 	position: absolute;
 	width: 1px;

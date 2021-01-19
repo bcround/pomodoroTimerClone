@@ -1,20 +1,20 @@
 .footer {
-  $marginTop: 15px;
+  margin-top: 150px;
+  padding: 40px 0;
   background-color: white;
   border-top: 2px solid #eee;
-  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   font-size: 1.4rem;
   color: hsl(357, 12%, 42%);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 
   .guide {
     display: flex;
     justify-content: center;
-    margin-top: $marginTop;
     .guide__item {
-      margin-right: 20px;
+      margin: 0 10px;
       a {
         font-weight: 700;
         text-decoration: none;
@@ -23,12 +23,25 @@
     }
   }
   small {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     .copyright {
       color: hsl(357, 8%, 60%);
       font-size: 1.2rem;
     }
     div {
-      margin-top: $marginTop;
+      margin-top: 15px;
     }
+    span {
+      font-weight: bold;
+      color:hsl(133, 46%, 52%);
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    width: 480px;
   }
 }
