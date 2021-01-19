@@ -46,6 +46,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+html {
+	font-size: 10px;
+	color: white;
+}
 
 // 깔
 $pomodoroBg: rgb(219, 82, 77);
@@ -74,4 +78,3 @@ header, main, footer {
 	clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0);
 }
-
