@@ -1,0 +1,46 @@
+header {
+  // background-color: lightgreen;
+  height: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    font-size: 2rem;
+    .title__a {
+      text-decoration: none;
+      color: $defaultColor;
+      font-weight: 700;
+    }
+  }
+  .setting {
+    background: none rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+    color: $defaultColor;
+    cursor: pointer;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+  }
+
+  .setting-modal {
+    display: none;
+  }
+}
+
+label[for="progressBar"] {
+  display: none;
+}
+
+.progress-bar {
+  width: 100%;
+  &::-webkit-progress-bar {
+    background-color: white;
+  }
+  &::-webkit-progress-value {
+    background-color: white;
+    color: white;
+  }
+}

@@ -6,20 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Timer Online - clone</title>
   <link rel="stylesheet" href="../dist/style.css">
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
 </head>
 <body>
   <header>
     <h1 class="title">
-      <a class="title__a" href="#"><i class="#"></i>Pomofocus</a>
+      <a class="title__a" href="#"><i class="fas fa-check-circle"></i> Pomofocus</a>
     </h1>
-    <button class="setting"><i></i>Setting</button>
+    <button class="setting"><i class="fas fa-cog"></i> Setting</button>
     
     <!-- 세팅 모달 -->
-    <section class="setting-modal">
+    <section class="setting-modal is-active">
       <h1 class="setting-modal__heading">TIMER SETTING</h1>
       <label for="pomodoro">Pomodoro</label>
       <input class="setting-modal__pomodoro" id="pomodoro" type="number">
-      <label  for="shortBreak">Short Break</label>
+      <label for="shortBreak">Short Break</label>
       <input class="setting-modal__short-break" id="shortBreak" type="number">
       <label for="longBreak">Long Break</label>
       <input class="setting-modal__long-break" id="longBreak" type="number">
@@ -128,7 +130,7 @@
 
   </main>
 
-  <footer>
+  <footer class="footer">
     <ul class="guide">
       <li class="guide__item"><a href="#">HOME</a></li>
       <li class="guide__item"><a href="#">PRIVACY</a></li>
@@ -136,7 +138,7 @@
     </ul>
     <small>
       <div>Made by 병국이와 아이들</div>
-      <div>©Pomofocus 2021. All Rights Reserved.</div>
+      <div class="copyright">©Pomofocus 2021. All Rights Reserved.</div>
     </small>
   </footer>
 </body>
