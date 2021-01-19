@@ -67,17 +67,9 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './lib'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
-console.log(Object(function webpackMissingModule() { var e = new Error("Cannot find module './lib'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-console.log(Object(function webpackMissingModule() { var e = new Error("Cannot find module './lib'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(Object(function webpackMissingModule() { var e = new Error("Cannot find module './lib'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), Object(function webpackMissingModule() { var e = new Error("Cannot find module './lib'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
-var f = new Object(function webpackMissingModule() { var e = new Error("Cannot find module './lib'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
-console.log(f.foo());
-console.log(f.bar());
 
 /***/ }),
 
@@ -9950,8 +9942,8 @@ try {
 /******/ 	// Load entry module
 /******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
 /******/ 	__webpack_require__("./src/js/main.js");
-/******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ 	__webpack_require__("./src/sass/main.scss");
+/******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map
