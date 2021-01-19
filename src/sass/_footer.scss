@@ -1,0 +1,30 @@
+.footer {
+  $marginTop: 15px;
+  background-color: white;
+  border-top: 2px solid #eee;
+  text-align: center;
+  font-size: 1.4rem;
+  color: hsl(357, 12%, 42%);
+  .guide {
+    display: flex;
+    justify-content: center;
+    margin-top: $marginTop;
+    .guide__item {
+      margin-right: 20px;
+      a {
+        font-weight: 700;
+        text-decoration: none;
+        color: hsl(357, 12%, 42%);
+      }
+    }
+  }
+  small {
+    .copyright {
+      color: hsl(357, 8%, 60%);
+      font-size: 1.2rem;
+    }
+    div {
+      margin-top: $marginTop;
+    }
+  }
+}
