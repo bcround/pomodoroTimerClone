@@ -28,7 +28,8 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
-  line-height: 1; }
+  line-height: 1;
+  box-sizing: border-box; }
 
 ol, ul {
   list-style: none; }
@@ -49,6 +50,10 @@ html {
   font-size: 10px;
   color: white; }
 
+button {
+  cursor: pointer;
+  border: none; }
+
 body {
   background-color: #db524d; }
 
@@ -66,6 +71,67 @@ header, main {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0); }
+
+.todos {
+  width: 480px;
+  margin: 0 auto;
+  font-size: 1.8rem; }
+  .todos .todos__brief {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+  .todos .todolist .todolist__header-wrap {
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+    overflow: hidden;
+    margin-bottom: 20px; }
+    .todos .todolist .todolist__header-wrap h2 {
+      font-weight: bold;
+      display: inline; }
+    .todos .todolist .todolist__header-wrap .todolist__setting {
+      width: 30px;
+      height: 30px;
+      float: right;
+      color: white;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px; }
+  .todos .todolist__setting-modal {
+    display: none; }
+  .todos .todolist__add-btn {
+    display: block;
+    font-size: 1.5rem;
+    width: 100%;
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    opacity: 0.8;
+    font-weight: bold; }
+    .todos .todolist__add-btn i {
+      margin-right: 5px; }
+  .todos .todolist__add-todo {
+    display: none; }
+
+.summary {
+  width: 480px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8); }
+  .summary ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly; }
+  .summary li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.6rem; }
+  .summary li span:last-child {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: white; }
 
 .footer {
   background-color: white;
@@ -352,6 +418,5 @@ header, main {
     top: 5px;
     margin-top: 25px;
     border-bottom: none; }
-
 
 /*# sourceMappingURL=style.css.map*/
