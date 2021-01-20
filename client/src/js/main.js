@@ -1,3 +1,7 @@
+import selectMode from './selectMode';
+
+selectMode();
+
 export default {
   tasks: [
     // {
