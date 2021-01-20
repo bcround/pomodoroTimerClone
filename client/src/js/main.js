@@ -1,2 +1,8 @@
-let task = '';
-let count = 0;
+import upAndDown from './estPomo';
+
+export let state = {
+  task: "",
+  count: 0
+}
+
+upAndDown();
