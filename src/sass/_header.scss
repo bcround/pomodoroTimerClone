@@ -1,5 +1,6 @@
 header {
   // background-color: lightgreen;
+  width: 480px;
   height: 60px;
   display: flex;
   flex-flow: row nowrap;
@@ -30,18 +31,16 @@ header {
   }
 }
 
-label[for="progressBar"] {
-  display: none;
+.progress-bar {
+  width: 480px;
+  margin: 0 auto 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
-.progress-bar {
-  margin-top: 15px;
-  width: 100%;
-  &::-webkit-progress-bar {
-    background-color: white;
-  }
-  &::-webkit-progress-value {
-    background-color: white;
-    color: white;
-  }
+.bar {
+  width: 1%;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
 }

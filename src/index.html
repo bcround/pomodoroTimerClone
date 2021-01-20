@@ -6,172 +6,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Timer Online - clone</title>
   <link rel="stylesheet" href="../dist/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 <body>
-  <header>
-    <h1 class="title">
-      <a class="title__a" href="#"><i class="fas fa-check-circle"></i> Pomofocus</a>
-    </h1>
-    <button class="setting"><i class="fas fa-cog"></i> Setting</button>
-  </header>
-  <!-- 세팅 모달 -->
-  <section class="setting-modal-bg">
-    <section class="setting-modal is-active">
-      <div class="setting-modal__container">
-        <h1 class="setting-modal__heading">TIMER SETTING</h1>
-        <button class="close-setting"><i class="fas fa-times"></i></button>
-        <h2 class="setting-modal__time">Time (minutes)</h2>
-        <div class="setting-modal__times">
-          <div class="setting-modal__pomodoro">
-            <label for="pomodoro">Pomodoro</label>
-            <input id="pomodoro" type="number" min="0" value="1">
-          </div>
-          <div class="setting-modal__short-break">
-            <label for="shortBreak">Short Break</label>
-            <input id="shortBreak" type="number" min="0" value="1">
-          </div>
-          <div class="setting-modal__long-break">
-            <label for="longBreak">Long Break</label>
-            <input id="longBreak" type="number" min="0" value="1">
+  <div class="container">
+    <header>
+      <h1 class="title">
+        <a class="title__a" href="#"><i class="fas fa-check-circle"></i> Pomofocus</a>
+      </h1>
+      <button class="setting"><i class="fas fa-cog"></i> Setting</button>
+    </header>
+    <!-- 세팅 모달 -->
+    <section class="setting-modal-bg">
+      <section class="setting-modal is-active">
+        <div class="setting-modal__container">
+          <h1 class="setting-modal__heading">TIMER SETTING</h1>
+          <button class="close-setting"><i class="fas fa-times"></i></button>
+          <h2 class="setting-modal__time">Time (minutes)</h2>
+          <div class="setting-modal__times">
+            <div class="setting-modal__pomodoro">
+              <label for="pomodoro">Pomodoro</label>
+              <input id="pomodoro" type="number" min="0" value="1">
+            </div>
+            <div class="setting-modal__short-break">
+              <label for="shortBreak">Short Break</label>
+              <input id="shortBreak" type="number" min="0" value="1">
+            </div>
+            <div class="setting-modal__long-break">
+              <label for="longBreak">Long Break</label>
+              <input id="longBreak" type="number" min="0" value="1">
+            </div>
           </div>
         </div>
+        <footer>
+          <button class="setting-modal__ok">OK</button>
+        </footer>
+      </section>
+    </section>
+    <main>
+  
+      <div class="progress-bar">
+        <h2 class="a11y-hidden">진행 바</h2>
+        <div class="bar"></div>
       </div>
-      <footer>
-        <button class="setting-modal__ok">OK</button>
-      </footer>
-    </section>
-  </section>
-  <main>
-
-    <label for="progressBar">progress</label>
-    <progress class="progress-bar" id="progressBar" max="100" value="70"></progress>
-
-    <section class="timer">
-      <h2 class="timer__heading a11y-hidden">Timer</h2>
-      <ul class="timer__menu">
-        <li class="timer__item"><button class="timer__btn isActive">Pomodoro</button></li>
-        <li class="timer__item"><button class="timer__btn">Short Break</button></li>
-        <li class="timer__item"><button class="timer__btn">Long Break</button></li>
-      </ul>
-      <p class="timer__countdown">25:00</p>
-      <input class="timer__start" id="timerStart" type="checkbox">
-      <label for="timerStart">START</label>
-    </section>
-
-    <section class="todos">
-      <h2 class="todos__heading a11y-hidden">To do list</h2>
-      <p class="todos__brief">Time to work!<span class="todos__working-on"></span></p>
-
-      <article class="todolist">
-        <div class="todolist__header-wrap">
-          <h2 class="todolist__heading">Tasks</h2>
-          <button class="todolist__setting" aria-label="setting">
-            <span class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></span>
-          </button>
-        </div>
-
-        <!-- 세팅 버튼 모달 -->
-        <div class="todolist__setting-modal is-active">
-          <ul class="todolist__setting-menu">
-            <li class="todolist__setting-item">
-              <button class="todolist__setting-btn"><i class="#"></i>Clear finished</button>
-            </li>
-            <li class="todolist__setting-item">
-              <button class="todolist__setting-btn"><i class="#"></i>Save as template</button>
-            </li>
-            <li class="todolist__setting-item">
-              <button class="todolist__setting-btn"><i class="#"></i>Add from templates</button>
+  
+      <section class="timer">
+        <h2 class="timer__heading a11y-hidden">Timer</h2>
+        <ul class="timer__menu">
+          <li class="timer__item"><button class="timer__btn isActive">Pomodoro</button></li>
+          <li class="timer__item"><button class="timer__btn">Short Break</button></li>
+          <li class="timer__item"><button class="timer__btn">Long Break</button></li>
+        </ul>
+        <p class="timer__countdown">25:00</p>
+        <input class="timer__start" id="timerStart" type="checkbox">
+        <label for="timerStart">START</label>
+      </section>
+  
+      <section class="todos">
+        <h2 class="todos__heading a11y-hidden">To do list</h2>
+        <p class="todos__brief">Time to work!<span class="todos__working-on"></span></p>
+  
+        <article class="todolist">
+          <div class="todolist__header-wrap">
+            <h2 class="todolist__heading">Tasks</h2>
+            <button class="todolist__setting" aria-label="setting">
+              <span class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></span>
+            </button>
+          </div>
+  
+          <!-- 세팅 버튼 모달 -->
+          <div class="todolist__setting-modal is-active">
+            <ul class="todolist__setting-menu">
+              <li class="todolist__setting-item">
+                <button class="todolist__setting-btn"><i class="#"></i>Clear finished</button>
+              </li>
+              <li class="todolist__setting-item">
+                <button class="todolist__setting-btn"><i class="#"></i>Save as template</button>
+              </li>
+              <li class="todolist__setting-item">
+                <button class="todolist__setting-btn"><i class="#"></i>Add from templates</button>
+              </li>
+            </ul>
+          </div>
+  
+          <ul class="todolist__list">
+            <!-- <li class="todolist__item">
+              <input class="todolist__checkbox" type="checkbox">
+              <span class="todolist__title"></span>
+              <span class="todolist__repeat"></span>
+              <button class="todolist__btn"></button>
+            </li> -->
+  
+            <!-- 투두리스트 아이템 모달 -->
+            <!-- TODO: isActive 추가시 모달 팝업 -->
+            <li class="todolist__item">
+              <div class="todolist__item-container">
+                <label for="change-todo a11y-hidden">이전에 설정한 타이틀 값</label>
+                <input type="text" class="todolist__change-todo" id="change-todo" placeholder="이전에 설정한 타이틀 값">
+                <div class="todolist__change">
+                  <label for="change-number" class="change__label">Est Pomodoros</label>
+                  <input type="number" class="todolist__change-number" id="change-number" value="1">
+                  <button class="todolist__change-up"><i class="fa fa-caret-up fa-lg"></i><span class="a11y-hidden">up</span></button>
+                  <button class="todolist__change-down"><i class="fa fa-caret-down fa-lg"></i><span class="a11y-hidden">down</span></button>
+                </div>
+                <button class="todolist__add-note">+ Add Note</button>
+                <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
+                <label for="todolistChangeNote" class="a11y-hidden">Explane todo</label>
+              </div>
+              <footer>
+                <button class="todolist__change-delete">Delete</button>
+                <div>
+                  <button class="todolist__change-cancel">Cancel</button>
+                  <button class="todolist__change-save">Save</button>
+                </div>
+              </footer>
             </li>
           </ul>
-        </div>
-
-        <ul class="todolist__list">
-          <!-- <li class="todolist__item">
-            <input class="todolist__checkbox" type="checkbox">
-            <span class="todolist__title"></span>
-            <span class="todolist__repeat"></span>
-            <button class="todolist__btn"></button>
-          </li> -->
-
-          <!-- 투두리스트 아이템 모달 -->
-          <li class="todolist__item isActive">
-            <div class="todolist__item-container">
-              <label for="change-todo a11y-hidden">이전에 설정한 타이틀 값</label>
-            <input type="text" class="todolist__change-todo" id="change-todo" placeholder="이전에 설정한 타이틀 값">
-            <div class="todolist__change">
-              <label for="change-number">Est Pomodoros</label>
-              <input type="number" class="todolist__change-number" id="change-number" value="1">
-              <button class="todolist__change-up"><i class="fas fa-caret-up"></i><span class="a11y-hidden">up</span></button>
-              <button class="todolist__change-down"><i class="fas fa-caret-down"></i><span class="a11y-hidden">down</span></button>
-            </div>
-            <button class="todolist__add-note"><i class="fas fa-plus"></i> Add Note</button>
-            <textarea name="todolist__change-note" id="todolistChangeNote" class="todolist__change-note isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
-            <label for="todolistChangeNote" class="a11y-hidden">Explane todo</label>
-            </div>
-            <footer>
-              <button class="todolist__change-delete">Delete</button>
-              <div>
-                <button class="todolist__change-cancel">Cancel</button>
-                <button class="todolist__change-save">Save</button>
+  
+          <button class="todolist__add-btn">
+            <i class="fa fa-plus-circle"></i>
+            Add Task
+          </button>
+  
+          <!-- 애드 테스크 모달 -->
+          <!-- TODO: is-active 클래스 추가시 모달 팝업 -->
+          <div class="todolist__add-todo">
+            <div class="todolist__add-todo-container">
+              <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
+              <input type="text" class="todolist__input-todo" id="inputTodo">
+              
+              <div class="todolist__count">
+                <label for="inputNumber" class="count__label-number">Est Pomodoros</label>
+                <input type="number" class="count__input-number" id="inputNumber">
+                <button class="count__up" aria-label="up">
+                  <span class="fa fa-caret-up fa-lg" aria-hidden="true"></span>
+                </button>
+                <button class="count__down" aria-label="down">
+                  <span class="fa fa-caret-down fa-lg" aria-hidden="true"></span>
+                </button>
               </div>
+              
+              <button class="todolist__add-note">+ Add Note</button>
+              <textarea name="note__note" id="todolistNote" class="note__note-input isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
+              <label for="todolistNote" class="note_note-label a11y-hidden">Explane todo</label>
+            </div>
+  
+            <footer class="todolist__footer">
+              <button class="footer__cancel">Cancel</button>
+              <button class="footer__save is_active">Save</button>
             </footer>
+          </div>
+        </article>
+      </section>
+  
+      <!-- TODO: 할 일이 생기면 display: block -->
+      <section class="summary">
+        <ul>
+          <li>
+            <span>Est:</span>
+            <span>0</span>
+          </li>
+          <li>
+            <span>Act:</span>
+            <span>0</span>
+          </li>
+          <li>
+            <span>Finish at</span>
+            <span>00:00</span>
           </li>
         </ul>
-
-        <button class="todolist__add-btn">
-          <i class="fa fa-plus-circle"></i>
-          Add Task
-        </button>
-
-        <!-- 애드 테스크 모달 -->
-        <div class="todolist__add-todo is-active">
-          <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
-          <input type="text" class="todolist__input-todo" id="inputTodo">
-          
-          <div class="todolist__count">
-            <label for="inputNumber" class="count__label-number">Est Pomodoros</label>
-            <input type="number" class="count__input-number" id="inputNumber">
-            <button class="count__up" aria-label="up">
-              <span class="fa fa-caret-up fa-lg" aria-hidden="true"></span>
-            </button>
-            <button class="count__down" aria-label="down">
-              <span class="fa fa-caret-down fa-lg" aria-hidden="true"></span>
-            </button>
-          </div>
-          
-          <button class="todolist__add-note">+ Add Note</button>
-          <div class="todolist__note">
-            <textarea name="note__note" id="todolistNote" class="note__note-input" cols="30" rows="2" placeholder="Some notes..."></textarea>
-            <label for="todolistNote" class="note_note-label a11y-hidden">Explane todo</label>
-          </div>
-
-          <footer class="todolist__footer">
-            <button class="footer__cancel">Cancel</button>
-            <button class="footer__save">Save</button>
-          </footer>
-        </div>
-      </article>
-    </section>
-
-    <section class="summary isActive">
-      <ul>
-        <li>
-          <span>Est:</span>
-          <span>0</span>
-        </li>
-        <li>
-          <span>Act:</span>
-          <span>0</span>
-        </li>
-        <li>
-          <span>Finish at</span>
-          <span>00:00</span>
-        </li>
-      </ul>
-    </section>
-
-  </main>
+      </section>
+  
+    </main>
+  </div>
 
   <footer class="footer">
     <ul class="guide">
@@ -180,7 +189,9 @@
       <li class="guide__item"><a href="#">CONTACT</a></li>
     </ul>
     <small>
-      <div>Made by 병국이와 아이들</div>
+      <div>Made by 
+        <span><i class="fab fa-angellist"></i> 꾹꾹이와 아이들</span>
+      </div>
       <div class="copyright">©Pomofocus 2021. All Rights Reserved.</div>
     </small>
   </footer>
