@@ -136,8 +136,10 @@
           <!-- TODO: is-active 클래스 추가시 모달 팝업 -->
           <div class="todolist__add-todo">
             <div class="todolist__add-todo-container">
-              <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
-              <input type="text" class="todolist__input-todo" id="inputTodo">
+              <div class="todolist__todo">
+                <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
+                <input type="text" class="todolist__input-todo" id="inputTodo">
+              </div>
               
               <div class="todolist__count">
                 <label for="inputNumber" class="count__label-number">Est Pomodoros</label>
@@ -149,15 +151,15 @@
                   <span class="fa fa-caret-down fa-lg" aria-hidden="true"></span>
                 </button>
               </div>
-              ƒ
               <button class="todolist__add-note">+ Add Note</button>
-              <textarea name="note__note" id="todolistNote" class="note__note-input isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
+              <!-- TODO: isActive 생기면 노트장 나오기 -->
+              <textarea name="note__note" id="todolistNote" class="note__note-input" cols="30" rows="2" placeholder="Some notes..."></textarea>
               <label for="todolistNote" class="note_note-label a11y-hidden">Explane todo</label>
             </div>
   
             <footer class="todolist__footer">
               <button class="footer__cancel">Cancel</button>
-              <button class="footer__save is_active">Save</button>
+              <button class="footer__save" disabled>Save</button>
             </footer>
           </div>
         </article>
