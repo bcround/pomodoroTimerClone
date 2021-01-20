@@ -1,3 +1,2 @@
-import timer from './_timer';
-
-timer()
+let task = '';
+let count = 0;
