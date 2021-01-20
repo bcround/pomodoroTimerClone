@@ -1,9 +1,12 @@
 import { foo } from './addTask';
+import upAndDown from './estPomo';
+import test from './_add_task_render';
 
 export let state = {
-  task: ""
-}
-export let task = '';
-export let count = 0;
+  task: "",
+  count: 0
+};
 
+upAndDown();
 foo();
+test();
