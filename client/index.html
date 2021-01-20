@@ -133,14 +133,14 @@
   
           <!-- 애드 테스크 모달 -->
           <!-- TODO: is-active 클래스 추가시 모달 팝업 -->
-          <div class="todolist__add-todo">
+          <div class="todolist__add-todo is-active">
             <div class="todolist__add-todo-container">
               <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
               <input type="text" class="todolist__input-todo" id="inputTodo">
               
               <div class="todolist__count">
                 <label for="inputNumber" class="count__label-number">Est Pomodoros</label>
-                <input type="number" class="count__input-number" id="inputNumber">
+                <input type="number" class="count__input-number" id="inputNumber" value="1">
                 <button class="count__up" aria-label="up">
                   <span class="fa fa-caret-up fa-lg" aria-hidden="true"></span>
                 </button>
@@ -148,7 +148,7 @@
                   <span class="fa fa-caret-down fa-lg" aria-hidden="true"></span>
                 </button>
               </div>
-              
+              ƒ
               <button class="todolist__add-note">+ Add Note</button>
               <textarea name="note__note" id="todolistNote" class="note__note-input isActive" cols="30" rows="2" placeholder="Some notes..."></textarea>
               <label for="todolistNote" class="note_note-label a11y-hidden">Explane todo</label>
