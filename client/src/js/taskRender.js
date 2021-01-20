@@ -6,7 +6,7 @@ export default function render() {
   let html = '';
 
   base.tasks.forEach(({ id, content, completed, pomodoro }) => {
-    html += `<li class="list__item" id=${id}>
+    html += `<li class="list__item isActive" id=${id}>
     <input class="list__checkbox" type="checkbox" ${completed ? 'checked' : ''}>
     <span class="list__title">${content}</span>
     <span class="list__repeat">0/${pomodoro}</span>

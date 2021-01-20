@@ -40,7 +40,7 @@
     display: none;
   };
 
-  .list__item {
+  .list__item.isActive {
     position: relative;
     color: #555;
     background-color: #fff;
