@@ -40,6 +40,36 @@
     display: none;
   };
 
+  .list__item.isActive {
+    position: relative;
+    color: #555;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    .list__repeat {
+      position: absolute;
+      left: 370px;
+      top: 20px;
+      font-weight: bold;
+      color: rgb(204, 204, 204);
+    };
+    .list__btn {
+      position: absolute;
+      left: 430px;
+      top: 13px;
+      width: 35px;
+      height: 35px;
+      background-color: #fff;
+      border-radius: 5px;
+      border: 1px solid rgb(223, 223, 223);
+      color: rgb(141, 141, 141);
+    };
+    .list__btn:hover {
+      background-color: rgb(223, 223, 223);
+    }
+  }
+
   .todolist__add-btn {
     margin-top: 15px;
     display: block;
