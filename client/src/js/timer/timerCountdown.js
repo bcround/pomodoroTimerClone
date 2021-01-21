@@ -1,4 +1,5 @@
 import { exportTime } from './selectMode';
+import changeMode from './changeMode';
 
 let { sec } = 0;
 
@@ -7,7 +8,7 @@ const $timerCountdown = document.querySelector('.timer__countdown');
 const $timerMenu = document.querySelector('.timer__menu');
 const $buttonText = document.querySelector('label[for="timerStart"]');
 
-export const render = () => {
+const render = () => {
   $timerCountdown.textContent = `${exportTime.min}:${sec}`;
 };
 
@@ -21,11 +22,14 @@ export default () => {
       stopInterval = setInterval(() => {
         if (sec === 0) {
           exportTime.min--;
-          sec = 59;
+          sec = 1;
         } else {
           sec--;
         }
         render();
+        if (exportTime.min < 0) {
+          changeMode();
+        }
       }, 1000);
     } else {
       $buttonText.textContent = 'START';
