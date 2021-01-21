@@ -30,6 +30,7 @@ export default () => {
 
   const reset = () => {
     $inputTodo.value = '';
+    $inputNote.value = '';
     $inputNote.classList.remove('isActive');
     $inputCount.value = 1;
     $noteBtn.classList.add('is-active');
@@ -54,7 +55,6 @@ export default () => {
   };
 
   $noteBtn.onclick = e => {
-    console.log(e.target.classList);
     e.target.classList.remove('is-active');
     $inputNote.classList.add('isActive');
   };
