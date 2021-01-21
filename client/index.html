@@ -67,7 +67,12 @@
   
       <section class="todos">
         <h2 class="todos__heading a11y-hidden">To do list</h2>
-        <p class="todos__brief">Time to work!<span class="todos__working-on"></span></p>
+        <p class="todos__brief is-active">Time to work!</p>
+        <div class="todos__working-on">
+          <p>Working on</p>
+          <p class="current-todo"></p>
+        </div>
+        
   
         <article class="todolist">
           <div class="todolist__header-wrap">
@@ -93,7 +98,6 @@
           </div>
   
           <ul class="todolist__list">
-            <li class="list__item"></li>
             <!-- <li class="list__item">
               <input class="list__checkbox" type="checkbox">
               <span class="list__title"></span>
@@ -167,9 +171,9 @@
       <!-- TODO: 할 일이 생기면 display: block -->
       <section class="summary">
         <ul>
-          <li>
+          <li class="">
             <span>Est:</span>
-            <span>0</span>
+            <span class="estCount"></span>
           </li>
           <li>
             <span>Act:</span>

@@ -9,10 +9,27 @@
     size: 1.8rem;
   };
   .todos__brief {
+    display: none;
     text-align: center;
     padding-bottom: $pb;
     margin-bottom: $mb;
+    &.is-active {
+      display: block;
+    }
   };
+
+  .todos__working-on {
+    display: none;
+    text-align: center;
+    padding-bottom: $pb;
+    margin-bottom: $mb;
+    &.is-active {
+      display: block;
+    }
+    .current-todo {
+      margin-top: 10px;
+    }
+  }
 
   .todolist {
     .todolist__header-wrap {
@@ -40,13 +57,29 @@
     display: none;
   };
 
-  .list__item.isActive {
+  .list__item {
     position: relative;
     color: #555;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 10px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      border-radius: 5px 0 0 5px;
+      background-color: rgba(0, 0, 0, 0);
+    }
+    &:hover::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    &.is-active::before {
+      background-color: rgba(0, 0, 0, 1);
+    }
     .list__repeat {
       position: absolute;
       left: 370px;
@@ -118,9 +151,11 @@
     display: none;
   }
 }
-
 .summary {
   display: none;
+}
+.summary.is-active {
+  display: block;
   width: 480px;
   margin: 30px auto;
   background: rgba(255, 255, 255, 0.1);
