@@ -1,37 +1,37 @@
-const time = {
-  pomodoroMin: 25,
-  shortBreakMin: 5,
-  longBreakMin: 15
-};
+import { exportTime } from './selectMode';
 
-const $timerCountdown = document.querySelector('.timer__countdown');
+// let min = time.pomodoroMin;
+let { sec } = 0;
+
 const $startBtn = document.querySelector('.timer__start');
-
-let min = time.pomodoroMin;
-let sec = 0;
-
-const render = () => {
-  $timerCountdown.textContent = `${min}:${sec}`;
+const $timerCountdown = document.querySelector('.timer__countdown');
+const $timerMenu = document.querySelector('.timer__menu');
+export const render = () => {
+  $timerCountdown.textContent = `${exportTime.min}:${sec}`;
 };
 
 let stopInterval = 0;
 
 export default () => {
-  document.addEventListener('DOMCuntentLoaded', render());
-
   $startBtn.addEventListener('click', () => {
+    sec = exportTime.sec;
     if ($startBtn.checked) {
       stopInterval = setInterval(() => {
         if (sec === 0) {
-          min -= 1;
+          exportTime.min--;
           sec = 59;
         } else {
-          sec -= 1;
+          sec--;
         }
         render();
       }, 1000);
     } else {
       clearInterval(stopInterval);
     }
+  });
+
+  $timerMenu.addEventListener('click', e => {
+    if (!e.target.matches('button')) return;
+    clearInterval(stopInterval);
   });
 };
