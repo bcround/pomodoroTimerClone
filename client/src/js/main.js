@@ -1,6 +1,4 @@
-import selectMode from './selectMode';
-
-selectMode();
+import timer from './timer/timer';
 
 export default {
   tasks: [
@@ -13,3 +11,5 @@ export default {
     // }
   ]
 };
+
+timer();
