@@ -1,37 +1,42 @@
-const time = {
-  pomodoroMin: 25,
-  shortBreakMin: 5,
-  longBreakMin: 15
-};
+import { exportTime } from './selectMode';
 
-const $timerCountdown = document.querySelector('.timer__countdown');
+let { sec } = 0;
+
 const $startBtn = document.querySelector('.timer__start');
+const $timerCountdown = document.querySelector('.timer__countdown');
+const $timerMenu = document.querySelector('.timer__menu');
+const $buttonText = document.querySelector('label[for="timerStart"]');
 
-let min = time.pomodoroMin;
-let sec = 0;
-
-const render = () => {
-  $timerCountdown.textContent = `${min}:${sec}`;
+export const render = () => {
+  $timerCountdown.textContent = `${exportTime.min}:${sec}`;
 };
 
 let stopInterval = 0;
 
 export default () => {
-  document.addEventListener('DOMCuntentLoaded', render());
-
   $startBtn.addEventListener('click', () => {
+    sec = exportTime.sec;
     if ($startBtn.checked) {
+      $buttonText.textContent = 'STOP';
       stopInterval = setInterval(() => {
         if (sec === 0) {
-          min -= 1;
+          exportTime.min--;
           sec = 59;
         } else {
-          sec -= 1;
+          sec--;
         }
         render();
       }, 1000);
     } else {
+      $buttonText.textContent = 'START';
       clearInterval(stopInterval);
     }
+  });
+
+  $timerMenu.addEventListener('click', e => {
+    if (!e.target.matches('button')) return;
+    clearInterval(stopInterval);
+    $startBtn.checked = false;
+    $buttonText.textContent = 'START';
   });
 };
