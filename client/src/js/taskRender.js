@@ -1,4 +1,4 @@
-import base from './main';
+import { base } from './main';
 
 export default function render() {
   // DOM
