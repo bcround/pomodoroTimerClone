@@ -8,22 +8,22 @@ const $inputTodo = document.querySelector('.todolist__input-todo');
 const $noteBtn = document.querySelector('.todolist__add-note');
 const $inputNote = document.getElementById('todolistNote');
 
-const $countCot = document.querySelector('.todolist__count');
 const $inputCount = document.getElementById('inputNumber');
 const $upBtn = document.querySelector('.count__up');
 const $downBtn = document.querySelector('.count__down');
 
 const $saveBtn = document.querySelector('.footer__save');
 const $cancelBtn = document.querySelector('.footer__cancel');
+
 export default () => {
-  const generateId = () => Math.max(...user.tasks.map(user => user.id), 0);
+  const generateId = () => Math.max(...user.tasks.map(user => user.id), 0) + 1;
   const validateNote = () => {
     if ($inputNote.value) return true;
     return false;
   };
   const addTodo = (content, note, count) => {
     user.tasks = [...user.tasks, {
-      id: generateId(), content, completed: false, pomodoro: count, noteActive: validateNote() ,note
+      id: generateId(), content, completed: false, pomodoro: count, noteActive: validateNote(), note
     }];
     render();
   };
@@ -46,11 +46,11 @@ export default () => {
     $saveBtn.classList.add('is_active');
   };
 
-  $upBtn.onclick = e => {
+  $upBtn.onclick = () => {
     $inputCount.value++;
   };
 
-  $downBtn.onclick = e => {
+  $downBtn.onclick = () => {
     $inputCount.value--;
   };
 
