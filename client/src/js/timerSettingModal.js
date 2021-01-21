@@ -1,4 +1,5 @@
 import timerSetting from './timerSettingState';
+import { timerState } from './timer/timerState';
 
 export default function timerSettingModal() {
   // DOM
@@ -32,6 +33,16 @@ export default function timerSettingModal() {
     timerSetting.longBreakMin = +$longBreak.value;
     // Do Something here
 
+    const $timerCountdown = document.querySelector('.timer__countdown');
+
+    if (timerState.state === 'Pomodoro') {
+      $timerCountdown.textContent = `${$pomodoro.value}:0`;
+    } else if (timerState.state === 'Short Break') {
+      $timerCountdown.textContent = `${$shortBreak.value}:0`;
+    } else if (timerState.state === 'Long Break') {
+      $timerCountdown.textContent = `${$longBreak.value}:0`;
+    }
+    
     closeModal();
   });
 }

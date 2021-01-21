@@ -10,9 +10,6 @@ export const exportTime = {
   sec: 0
 };
 
-// let min = time.pomodoroMin;
-// let sec = 0;
-
 export const render = () => {
   $timerCountdown.textContent = `${exportTime.min}:${exportTime.sec}`;
 };

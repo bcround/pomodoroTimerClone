@@ -1,9 +1,11 @@
+import baseTime from '../timerSettingState';
+
 export const timerState = {
   state: 'Pomodoro'
 };
 
 export const time = {
-  pomodoroMin: 1,
-  shortBreakMin: 1,
-  longBreakMin: 15
+  pomodoroMin: baseTime.pomodoroMin,
+  shortBreakMin: baseTime.shortBreakMin,
+  longBreakMin: baseTime.longBreakMin
 };

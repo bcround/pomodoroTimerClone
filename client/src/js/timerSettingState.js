@@ -1,5 +1,5 @@
 export default {
-  pomodoroMin: 0,
-  shortBreakMin: 0,
-  longBreakMin: 0
+  pomodoroMin: 25,
+  shortBreakMin: 5,
+  longBreakMin: 15
 };
