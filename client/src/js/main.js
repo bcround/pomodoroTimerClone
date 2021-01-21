@@ -1,5 +1,6 @@
 import foo from './addTodo';
 import timerSettingModal from './timerSettingModal';
+import timer from './timer/timer';
 
 export default {
   tasks: [
@@ -29,3 +30,4 @@ export default {
 
 foo();
 timerSettingModal();
+timer();
