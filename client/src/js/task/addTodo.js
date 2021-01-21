@@ -1,5 +1,6 @@
 import user from './taskState';
 import render from './taskRender';
+import deleteTask from './deleteTask';
 
 const $addBtn = document.querySelector('.todolist__add-btn');
 const $addTodoModal = document.querySelector('.todolist__add-todo');
@@ -16,7 +17,7 @@ const $downBtn = document.querySelector('.count__down');
 const $saveBtn = document.querySelector('.footer__save');
 const $cancelBtn = document.querySelector('.footer__cancel');
 export default () => {
-  const generateId = () => Math.max(...user.tasks.map(user => user.id), 0);
+  const generateId = () => Math.max(...user.tasks.map(user => user.id), 0) + 1;
   const validateNote = () => {
     if ($inputNote.value) return true;
     return false;
