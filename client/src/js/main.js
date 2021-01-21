@@ -1,7 +1,9 @@
-import addTodo from './task/addTodo';
+// import addTodo from './task/addTodo';
+import final from './task/final';
 import timerSettingModal from './timerSettingModal';
 import timer from './timer/timer';
 
-addTodo();
+// addTodo();
+final();
 timerSettingModal();
 timer();
