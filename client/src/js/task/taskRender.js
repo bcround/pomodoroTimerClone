@@ -3,6 +3,8 @@ import base from './taskState';
 export default function render() {
   // DOM
   const $todoList = document.querySelector('.todolist__list');
+  const $summeryCont = document.querySelector('.summary');
+  const $estCount = document.querySelector('.estCount');
   const $todosBrief = document.querySelector('.todos__brief');
   const $todosWorkingOn = document.querySelector('.todos__working-on');
 
@@ -23,4 +25,12 @@ export default function render() {
   });
 
   $todoList.innerHTML = html;
+
+  if (base.tasks.length) {
+    const est = base.tasks.reduce((acc, cur) => acc + +cur.pomodoro, 0);
+    $summeryCont.classList.add('is-active');
+    $estCount.textContent = est;
+  } else if (!base.tasks.length) {
+    $summeryCont.classList.remove('is-active');
+  }
 }

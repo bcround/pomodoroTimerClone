@@ -23,7 +23,7 @@ export default () => {
   };
   const addTodo = (content, note, count) => {
     user.tasks = [...user.tasks, {
-      id: generateId(), content, active: false, completed: false, pomodoro: count, noteActive: validateNote(), note
+      id: generateId(), content, active: false ,completed: false , pomodoro: count, noteActive: validateNote(), note
     }];
     render();
   };
@@ -41,9 +41,13 @@ export default () => {
     $addBtn.classList.remove('is-active');
   };
 
-  $inputTodo.oninput = () => {
-    $saveBtn.removeAttribute('disabled');
-    $saveBtn.classList.add('is_active');
+  $inputTodo.onkeyup = e => {
+    if (!e.target.value) {
+      $saveBtn.classList.remove('is_active');
+    } else {
+      $saveBtn.removeAttribute('disabled');
+      $saveBtn.classList.add('is_active');
+    }
   };
 
   $upBtn.onclick = () => {
