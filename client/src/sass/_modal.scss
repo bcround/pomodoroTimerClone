@@ -145,14 +145,6 @@
   background-color: white;
   margin: 12px auto 0;
   border-radius: 10px;
-  & [for="inputTodo"] {
-    position: absolute;
-    font-weight: bold;
-    color: $grayFont;
-    line-height: 45.6px;
-    align-items: center;
-    font-size: 2.2rem;
-  }
   & .todolist__input-todo {
     width: 100%;
     height: 25.6px;
@@ -203,7 +195,11 @@ label[for=change-number], label[for=inputNumber] {
   padding: 10px 0;
   text-indent: 1rem;
 }
-.todolist__add-note, .todolist__add-note {
+.todolist__add-note {
+  display: none;
+}
+.todolist__add-note.is-active {
+  display: block;
   border: none;
   background-color: transparent;
   margin: 10px 0;

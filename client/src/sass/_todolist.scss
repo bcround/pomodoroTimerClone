@@ -85,6 +85,10 @@
   }
 
   .todolist__add-btn {
+    display: none;
+  }
+
+  .todolist__add-btn.is-active {
     margin-top: 15px;
     display: block;
     font-size: 1.5rem;

@@ -9,6 +9,7 @@ export default {
       content: 'html',
       completed: true,
       pomodoro: 0,
+      noteActive: false,
       note: ''
     },
     {
@@ -16,6 +17,7 @@ export default {
       content: 'css',
       completed: false,
       pomodoro: 0,
+      noteActive: false,
       note: ''
     },
     {
@@ -23,6 +25,7 @@ export default {
       content: 'js',
       completed: true,
       pomodoro: 0,
+      noteActive: false,
       note: ''
     }
   ]

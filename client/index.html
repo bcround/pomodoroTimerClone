@@ -127,7 +127,7 @@
             </li> -->
           </ul>
   
-          <button class="todolist__add-btn">
+          <button class="todolist__add-btn is-active">
             <i class="fa fa-plus-circle"></i>
             Add Task
           </button>
@@ -137,8 +137,7 @@
           <div class="todolist__add-todo">
             <div class="todolist__add-todo-container">
               <div class="todolist__todo">
-                <label for="inputTodo" class="todolist__label-todo">What are you working on?</label>
-                <input type="text" class="todolist__input-todo" id="inputTodo">
+                <input type="text" class="todolist__input-todo" id="inputTodo" placeholder="What are you working on?">
               </div>
               
               <div class="todolist__count">
@@ -151,7 +150,7 @@
                   <span class="fa fa-caret-down fa-lg" aria-hidden="true"></span>
                 </button>
               </div>
-              <button class="todolist__add-note">+ Add Note</button>
+              <button class="todolist__add-note is-active">+ Add Note</button>
               <!-- TODO: isActive 생기면 노트장 나오기 -->
               <textarea name="note__note" id="todolistNote" class="note__note-input" cols="30" rows="2" placeholder="Some notes..."></textarea>
               <label for="todolistNote" class="note_note-label a11y-hidden">Explane todo</label>
