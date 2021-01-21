@@ -1,6 +1,5 @@
 import user from './taskState';
 import render from './taskRender';
-import deleteTask from './deleteTask';
 
 const $addBtn = document.querySelector('.todolist__add-btn');
 const $addTodoModal = document.querySelector('.todolist__add-todo');
