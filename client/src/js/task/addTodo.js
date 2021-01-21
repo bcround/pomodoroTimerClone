@@ -23,7 +23,7 @@ export default () => {
   };
   const addTodo = (content, note, count) => {
     user.tasks = [...user.tasks, {
-      id: generateId(), content, completed: false, pomodoro: count, noteActive: validateNote(), note
+      id: generateId(), content, active: false, completed: false, pomodoro: count, noteActive: validateNote(), note
     }];
     render();
   };
