@@ -3,7 +3,7 @@ export const timerState = {
 };
 
 export const time = {
-  pomodoroMin: 25,
-  shortBreakMin: 5,
+  pomodoroMin: 1,
+  shortBreakMin: 1,
   longBreakMin: 15
 };
