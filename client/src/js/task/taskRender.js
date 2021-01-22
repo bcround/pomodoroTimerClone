@@ -19,7 +19,7 @@ export default function render() {
     <input class="list__checkbox" type="checkbox" ${completed ? 'checked' : ''}>
     <span class="list__title" style="text-decoration: ${completed ? 'line-through' : 'none' }">${content}</span>
     <span class="list__repeat">0/${pomodoro}</span>
-    <button class="list__btn"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+    <button class="list__btn fas fa-minus"></button>
     <p class="list__note ${noteActive ? 'is-active' : ''}">${note}</p>
   </li>`;
   });
