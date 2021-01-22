@@ -6,8 +6,10 @@ export default {
     //   active: false,
     //   completed: false,
     //   pomodoro: 1,
+    //   actPomodoro: 0,
     //   noteActive: false,
-    //   note: ''
+    //   note: '',
+    //   timer: 0
     // }
   ]
 };
