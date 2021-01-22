@@ -23,7 +23,17 @@ export default () => {
   };
   const addTodo = (content, note, count) => {
     user.tasks = [...user.tasks, {
-      id: generateId(), content, active: false ,completed: false , pomodoro: count, actPomodoro: 0, noteActive: validateNote(), note, timer: 25
+      id: generateId(),
+      content,
+      active: false,
+      completed: false,
+      pomodoro: count,
+      actPomodoro: 0,
+      noteActive: validateNote(),
+      note,
+      pomodoroMin: 25,
+      shortBreakMin: 5,
+      longBreakMin: 15
     }];
     render();
   };

@@ -33,7 +33,7 @@ export default function render() {
   if (base.tasks.length) {
     const est = base.tasks.reduce((acc, cur) => {
       if (!cur.completed) {
-        return acc + +cur.pomodoro;
+        return acc + (+cur.pomodoro);
       }
       return acc;
     }, 0);
@@ -42,7 +42,11 @@ export default function render() {
     const setFinishTime = () => {
       let hour = new Date().getHours();
       let min = new Date().getMinutes();
-      const all = base.tasks.reduce((acc, cur) => acc + cur.timer, 0);
+      const all = base.tasks.reduce((acc, cur) => {
+        if (cur.completed) return acc;
+        acc += cur.pomodoroMin + cur.shortBreakMin + cur.longBreakMin;
+        return acc;
+      }, 0);
       min += all;
       hour += Math.floor(min / 60);
 
