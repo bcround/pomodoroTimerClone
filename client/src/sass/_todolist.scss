@@ -96,10 +96,14 @@
       background-color: #fff;
       border-radius: 5px;
       border: 1px solid rgb(223, 223, 223);
-      color: rgb(141, 141, 141);
+      color: $pomodoroBg;
+      border: 2px solid currentColor;
+      padding: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
     };
     .list__btn:hover {
-      background-color: rgb(223, 223, 223);
+      background-color: rgba(129, 129, 129, 0.1);
     }
     .list__note {
       display: none;
