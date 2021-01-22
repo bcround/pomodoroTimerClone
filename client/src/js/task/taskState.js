@@ -9,7 +9,9 @@ export default {
     //   actPomodoro: 0,
     //   noteActive: false,
     //   note: '',
-    //   timer: 0
+    //   pomodoroMin: 25,
+    //   shortBreakMin: 5,
+    //   longBreakMin: 15
     // }
   ]
 };
