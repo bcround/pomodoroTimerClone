@@ -1,5 +1,6 @@
 import user from './taskState';
 import render from './taskRender';
+import timerState from '../timer/timerState';
 
 const $addBtn = document.querySelector('.todolist__add-btn');
 const $addTodoModal = document.querySelector('.todolist__add-todo');
@@ -25,15 +26,15 @@ export default () => {
     user.tasks = [...user.tasks, {
       id: generateId(),
       content,
-      active: false,
+      active: generateId() === 1,
       completed: false,
       pomodoro: count,
       actPomodoro: 0,
       noteActive: validateNote(),
       note,
-      pomodoroMin: 25,
-      shortBreakMin: 5,
-      longBreakMin: 15
+      pomodoroMin: timerState.p,
+      shortBreakMin: timerState.s,
+      longBreakMin: timerState.l
     }];
     render();
   };

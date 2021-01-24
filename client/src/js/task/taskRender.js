@@ -18,10 +18,14 @@ export default function render() {
     $todosWorkingOn.classList.remove('is-active');
   }
 
-  base.tasks.forEach(({ id, content, active, completed, pomodoro, actPomodoro, noteActive, note }) => {
+  base.tasks.forEach(({
+    id, content, active, completed, pomodoro, actPomodoro, noteActive, note
+  }) => {
     html += `<li class="list__item ${active ? 'is-active' : ''}" id=${id}>
     <input class="list__checkbox" type="checkbox" ${completed ? 'checked' : ''}>
-    <span class="list__title" style="text-decoration: ${completed ? 'line-through' : 'none' }">${content}</span>
+    <span class="list__title" style="text-decoration: ${completed ? 'line-through' : 'none'}">
+      ${content}
+    </span>
     <span class="list__repeat">${actPomodoro}/${pomodoro}</span>
     <button class="list__btn fas fa-minus"></button>
     <p class="list__note ${noteActive ? 'is-active' : ''}">${note}</p>
@@ -42,11 +46,15 @@ export default function render() {
     const setFinishTime = () => {
       let hour = new Date().getHours();
       let min = new Date().getMinutes();
-      const all = base.tasks.reduce((acc, cur) => {
-        if (cur.completed) return acc;
-        acc += cur.pomodoroMin + cur.shortBreakMin + cur.longBreakMin;
-        return acc;
-      }, 0);
+
+      const user = base.tasks[0];
+      const shortBreakCount = Math.floor(est / 5);
+      const longBreakCount = Math.max(Math.floor(est / 4));
+
+      const all = (user.pomodoroMin * est)
+                  + (user.shortBreakMin * est - shortBreakCount)
+                  + user.longBreakMin * longBreakCount;
+
       min += all;
       hour += Math.floor(min / 60);
 
