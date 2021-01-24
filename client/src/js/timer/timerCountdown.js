@@ -1,11 +1,13 @@
 import state from './timerState';
 import changeMode from './changeMode';
 import progress from './progress';
+import pomodoroCount from '../task/pomodoroCount';
 
 const $startBtn = document.querySelector('.timer__start');
 const $timerCountdown = document.querySelector('.timer__countdown');
 const $timerMenu = document.querySelector('.timer__menu');
 const $buttonText = document.querySelector('label[for="timerStart"]');
+const $settingBtn = document.querySelector('.setting');
 
 const countdownRender = () => {
   if (state.state === 'Pomodoro') {
@@ -28,7 +30,7 @@ export default () => {
         if (state.state === 'Pomodoro') {
           if (state.curPSec === 0) {
             if (state.curP === 0) {
-              state.curRepeat++;
+              pomodoroCount();
               changeMode();
             }
             state.curP--;
@@ -73,5 +75,11 @@ export default () => {
     clearInterval(stopInterval);
     $startBtn.checked = false;
     $buttonText.textContent = 'START';
+  });
+
+  $settingBtn.addEventListener('click', () => {
+    $startBtn.checked = false;
+    $buttonText.textContent = 'START';
+    clearInterval(stopInterval);
   });
 };

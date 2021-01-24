@@ -16,6 +16,15 @@ export default function timerSettingModal() {
   };
 
   $settingBtn.addEventListener('click', () => {
+    state.p = +$pomodoro.value;
+    state.s = +$shortBreak.value;
+    state.l = +$longBreak.value;
+    state.curP = +$pomodoro.value;
+    state.curS = +$shortBreak.value;
+    state.curL = +$longBreak.value;
+    state.curPSec = 0;
+    state.curSSec = 0;
+    state.curLSec = 0;
     $settingModalBg.classList.add('is-active');
   });
 
