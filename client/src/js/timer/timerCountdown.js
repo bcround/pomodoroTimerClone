@@ -1,6 +1,7 @@
 import state from './timerState';
 import changeMode from './changeMode';
 import progress from './progress';
+import pomodoroCount from '../task/pomodoroCount';
 
 const $startBtn = document.querySelector('.timer__start');
 const $timerCountdown = document.querySelector('.timer__countdown');
@@ -29,7 +30,7 @@ export default () => {
         if (state.state === 'Pomodoro') {
           if (state.curPSec === 0) {
             if (state.curP === 0) {
-              state.curRepeat++;
+              pomodoroCount();
               changeMode();
             }
             state.curP--;

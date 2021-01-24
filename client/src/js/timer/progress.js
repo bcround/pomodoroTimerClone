@@ -37,6 +37,17 @@ export default () => {
   $settingBtn.addEventListener('click', () => {
     $startBtn.checked = false;
     progress = 0;
+    $bar.style.width = '0';
+    clearInterval(id);
+  });
+
+  const $timerMenu = document.querySelector('.timer__menu');
+
+  $timerMenu.addEventListener('click', e => {
+    if (!e.target.matches('button')) return;
+
+    progress = 0;
+    $bar.style.width = '0';
     clearInterval(id);
   });
 };
