@@ -6,6 +6,7 @@ const $startBtn = document.querySelector('.timer__start');
 const $timerCountdown = document.querySelector('.timer__countdown');
 const $timerMenu = document.querySelector('.timer__menu');
 const $buttonText = document.querySelector('label[for="timerStart"]');
+const $settingBtn = document.querySelector('.setting');
 
 const countdownRender = () => {
   if (state.state === 'Pomodoro') {
@@ -73,5 +74,11 @@ export default () => {
     clearInterval(stopInterval);
     $startBtn.checked = false;
     $buttonText.textContent = 'START';
+  });
+
+  $settingBtn.addEventListener('click', () => {
+    $startBtn.checked = false;
+    $buttonText.textContent = 'START';
+    clearInterval(stopInterval);
   });
 };

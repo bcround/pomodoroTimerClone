@@ -3,6 +3,7 @@ import state from './timerState';
 const $bar = document.querySelector('.bar');
 const $startBtn = document.querySelector('.timer__start');
 $bar.style.width = '0';
+const $settingBtn = document.querySelector('.setting');
 
 let id = 0;
 let progress = 0;
@@ -32,4 +33,10 @@ export default () => {
   } else {
     clearInterval(id);
   }
+
+  $settingBtn.addEventListener('click', () => {
+    $startBtn.checked = false;
+    progress = 0;
+    clearInterval(id);
+  });
 };
