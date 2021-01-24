@@ -43,6 +43,7 @@ export default function render() {
     }, 0);
 
     const act = base.tasks.reduce((acc, cur) => acc + cur.actPomodoro, 0);
+
     const setFinishTime = () => {
       let hour = new Date().getHours();
       let min = new Date().getMinutes();
