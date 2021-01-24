@@ -1,5 +1,5 @@
-import timerSetting from './timerSettingState';
-import { timerState } from './timer/timerState';
+import state from './timer/timerState';
+import render from './timer/render';
 
 export default function timerSettingModal() {
   // DOM
@@ -28,21 +28,14 @@ export default function timerSettingModal() {
   });
 
   $okBtn.addEventListener('click', () => {
-    timerSetting.pomodoroMin = +$pomodoro.value;
-    timerSetting.shortBreakMin = +$shortBreak.value;
-    timerSetting.longBreakMin = +$longBreak.value;
+    state.p = +$pomodoro.value;
+    state.s = +$shortBreak.value;
+    state.l = +$longBreak.value;
+    state.curP = +$pomodoro.value;
+    state.curS = +$shortBreak.value;
+    state.curL = +$longBreak.value;
     // Do Something here
-
-    const $timerCountdown = document.querySelector('.timer__countdown');
-
-    if (timerState.state === 'Pomodoro') {
-      $timerCountdown.textContent = `${$pomodoro.value}:0`;
-    } else if (timerState.state === 'Short Break') {
-      $timerCountdown.textContent = `${$shortBreak.value}:0`;
-    } else if (timerState.state === 'Long Break') {
-      $timerCountdown.textContent = `${$longBreak.value}:0`;
-    }
-    
+    render();
     closeModal();
   });
 }

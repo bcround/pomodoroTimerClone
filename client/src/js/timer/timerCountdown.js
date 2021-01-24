@@ -1,35 +1,63 @@
-import { exportTime } from './selectMode';
+import state from './timerState';
 import changeMode from './changeMode';
-
-let { sec } = 0;
 
 const $startBtn = document.querySelector('.timer__start');
 const $timerCountdown = document.querySelector('.timer__countdown');
 const $timerMenu = document.querySelector('.timer__menu');
 const $buttonText = document.querySelector('label[for="timerStart"]');
 
-const render = () => {
-  $timerCountdown.textContent = `${exportTime.min}:${sec}`;
+const countdownRender = () => {
+  if (state.state === 'Pomodoro') {
+    $timerCountdown.textContent = `${state.curP}:${state.curPSec}`;
+  } else if (state.state === 'Short Break') {
+    $timerCountdown.textContent = `${state.curS}:${state.curSSec}`;
+  } else if (state.state === 'Long Break') {
+    $timerCountdown.textContent = `${state.curL}:${state.curLSec}`;
+  }
 };
 
 let stopInterval = 0;
 
 export default () => {
   $startBtn.addEventListener('click', () => {
-    sec = exportTime.sec;
     if ($startBtn.checked) {
       $buttonText.textContent = 'STOP';
       stopInterval = setInterval(() => {
-        if (sec === 0) {
-          exportTime.min--;
-          sec = 1;
-        } else {
-          sec--;
+        if (state.state === 'Pomodoro') {
+          if (state.curPSec === 0) {
+            if (state.curP === 0) {
+              state.curRepeat++;
+              changeMode();
+            }
+            state.curP--;
+            state.curPSec = 2;
+          } else {
+            state.curPSec--;
+          }
+        } else if (state.state === 'Short Break') {
+          if (state.curSSec === 0) {
+            if (state.curS === 0) {
+              changeMode();
+            }
+            state.curS--;
+            state.curSSec = 2;
+          } else {
+            state.curSSec--;
+          }
+        } else if (state.state === 'Long Break') {
+          if (state.curLSec === 0) {
+            if (state.curL === 0) {
+              $buttonText.textContent = 'START';
+              clearInterval(stopInterval);
+            } else {
+              state.curL--;
+              state.curLSec = 2;
+            }
+          } else {
+            state.curLSec--;
+          }
         }
-        render();
-        if (exportTime.min < 0) {
-          changeMode();
-        }
+        countdownRender();
       }, 1000);
     } else {
       $buttonText.textContent = 'START';

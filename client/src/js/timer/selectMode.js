@@ -1,20 +1,9 @@
-import { timerState, time } from './timerState';
+import state from './timerState';
+import render from './render';
 
-const $body = document.querySelector('body');
-const $timerStart = document.querySelector('label[for="timerStart"]');
-const $timerCountdown = document.querySelector('.timer__countdown');
 const $timerMenu = document.querySelector('.timer__menu');
 
-export const exportTime = {
-  min: time.pomodoroMin,
-  sec: 0
-};
-
-export const render = () => {
-  $timerCountdown.textContent = `${exportTime.min}:${exportTime.sec}`;
-};
-
-export const selectMode = () => {
+export default () => {
   $timerMenu.addEventListener('click', e => {
     if (!e.target.matches('button')) return;
 
@@ -24,24 +13,15 @@ export const selectMode = () => {
 
     e.target.classList.add('isActive');
 
-    timerState.state = e.target.textContent;
+    state.state = e.target.textContent;
+    state.curP = state.p;
+    state.curS = state.s;
+    state.curL = state.l;
+    state.curPSec = 0;
+    state.curPSec = 0;
+    state.curPSec = 0;
 
-    if (timerState.state === 'Pomodoro') {
-      $body.style.backgroundColor = 'rgb(219, 82, 77)';
-      $timerStart.style.color = 'rgb(219, 82, 77)';
-      exportTime.min = time.pomodoroMin;
-      render();
-    } else if (timerState.state === 'Short Break') {
-      $body.style.backgroundColor = 'rgb(70, 142, 145)';
-      $timerStart.style.color = 'rgb(70, 142, 145)';
-      exportTime.min = time.shortBreakMin;
-      render();
-    } else {
-      $body.style.backgroundColor = 'rgb(67, 126, 168)';
-      $timerStart.style.color = 'rgb(67, 126, 168)';
-      exportTime.min = time.longBreakMin;
-      render();
-    }
+    render();
   });
 };
 

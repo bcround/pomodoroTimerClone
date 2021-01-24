@@ -1,4 +1,4 @@
-import { selectMode } from './selectMode';
+import selectMode from './selectMode';
 import timerCountdown from './timerCountdown';
 import progress from './progress';
 
