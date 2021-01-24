@@ -1,5 +1,6 @@
 import state from './timerState';
 import changeMode from './changeMode';
+import progress from './progress';
 
 const $startBtn = document.querySelector('.timer__start');
 const $timerCountdown = document.querySelector('.timer__countdown');
@@ -20,6 +21,7 @@ let stopInterval = 0;
 
 export default () => {
   $startBtn.addEventListener('click', () => {
+    progress();
     if ($startBtn.checked) {
       $buttonText.textContent = 'STOP';
       stopInterval = setInterval(() => {
@@ -30,7 +32,7 @@ export default () => {
               changeMode();
             }
             state.curP--;
-            state.curPSec = 2;
+            state.curPSec = 59;
           } else {
             state.curPSec--;
           }
@@ -40,7 +42,7 @@ export default () => {
               changeMode();
             }
             state.curS--;
-            state.curSSec = 2;
+            state.curSSec = 59;
           } else {
             state.curSSec--;
           }
@@ -48,10 +50,11 @@ export default () => {
           if (state.curLSec === 0) {
             if (state.curL === 0) {
               $buttonText.textContent = 'START';
+              $startBtn.checked = '';
               clearInterval(stopInterval);
             } else {
               state.curL--;
-              state.curLSec = 2;
+              state.curLSec = 59;
             }
           } else {
             state.curLSec--;

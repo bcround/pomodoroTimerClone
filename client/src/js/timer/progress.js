@@ -1,36 +1,35 @@
+import state from './timerState';
+
 const $bar = document.querySelector('.bar');
 const $startBtn = document.querySelector('.timer__start');
+$bar.style.width = '0';
+
+let id = 0;
+let progress = 0;
+let standard = 100;
 
 export default () => {
-  let i = 0;
-  $startBtn.onclick = () => {
-    // if (i === 0) {
-    //   i = 1;
-    //   let width = 10;
-    //   const id = setInterval(frame, 10);
-    //   const frame = () => {
-    //     if (width >= 100) {
-    //       clearInterval(id);
-    //       i = 0;
-    //     } else {
-    //       width++;
-    //       console.log(width);
-    //       $bar.style.width = width + '%';
-    //     }
-    //   };
-    // }
-    if (i === 0) {
-      i = 1;
-      let width = 10;
-      const id = setInterval(function frame() {
-        if (width >= 100) {
-          clearInterval(id);
-          i = 0;
-        } else {
-          width++;
-          $bar.style.width = width + '%';
-        }
-      }, 10);
-    }
-  };
+  if (state.state === 'Pomodoro') {
+    standard = state.p * 60;
+  } else if (state.state === 'Short Break') {
+    standard = state.l * 60;
+  } else if (state.state === 'Long Break') {
+    standard = state.s * 60;
+  }
+  const width = standard / 1000;
+
+  if ($startBtn.checked) {
+    id = setInterval(() => {
+      if (progress >= standard) {
+        $bar.style.width = '0';
+        progress = 0;
+        clearInterval(id);
+      } else {
+        progress += width;
+        $bar.style.width = `${(progress / standard) * 100}%`;
+      }
+    }, (standard / 1000) * 1000);
+  } else {
+    clearInterval(id);
+  }
 };
