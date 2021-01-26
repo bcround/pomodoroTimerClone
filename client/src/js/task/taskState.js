@@ -2,8 +2,8 @@ export default {
   tasks: [
     // {
     //   id: 1,
-    //   content: 'example',
-    //   active: false,
+    //   content: 'HTML',
+    //   active: true,
     //   completed: false,
     //   pomodoro: 1,
     //   actPomodoro: 0,
