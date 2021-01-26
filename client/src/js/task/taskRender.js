@@ -49,11 +49,10 @@ export default function render() {
       let min = new Date().getMinutes();
 
       const user = base.tasks[0];
-      const shortBreakCount = Math.floor(est / 5);
-      const longBreakCount = Math.max(Math.floor(est / 4));
+      const longBreakCount = Math.floor(est / 4);
 
       const all = (user.pomodoroMin * est)
-                  + (user.shortBreakMin * est - shortBreakCount)
+                  + user.shortBreakMin * (est - longBreakCount)
                   + user.longBreakMin * longBreakCount;
 
       min += all;
