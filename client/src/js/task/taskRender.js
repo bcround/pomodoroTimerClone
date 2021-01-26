@@ -63,6 +63,11 @@ export default function render() {
         min = (min < 10) ? '0' + min : min;
       }
 
+      if (hour >= 24) {
+        const num = Math.floor(hour / 24);
+        hour -= 24 * num;
+      }
+
       $finishTime.textContent = `${hour}:${min}`;
     };
 
