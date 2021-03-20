@@ -70,6 +70,7 @@ export default function render() {
 
       $finishTime.textContent = `${hour}:${min}`;
     };
+
     setFinishTime();
     if (timeOut) clearInterval(timeOut);
     timeOut = setInterval(setFinishTime, 60000);
