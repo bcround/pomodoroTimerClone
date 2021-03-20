@@ -18,14 +18,14 @@
 
 ## 🔊 주요 기능
 
-##### <Task List>
+#### `<Task List>`
 
 - Task 추가 및 삭제
 - Task 체크
 - Task 별 횟수 설정
 - 총 Task 종료 시간 표시
 
-##### <Timer>
+##### `<Timer>`
 
 - 스탑 워치
 - 모드 전환
